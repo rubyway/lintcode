@@ -3,7 +3,8 @@
 样例
 给定 n = 3, 可生成的组合如下:
 
-"((()))", "(()())", "(())()", "()(())", "()()()"'''
+"((()))", "(()())", "(())()", "()(())", "()()()"
+http://pythontutor.com/visualize.html#mode=edit'''
 def allIter(aStr, solution, n, left, right):
     if len(aStr) == 2*n:
         solution.append(aStr)
