@@ -17,4 +17,18 @@ def twoSum(aList, n):
             return [i+ 1, aList.index(diff)+ 1]
 
 print twoSum([2, 7, 11, 15], 23)    
-    
+class Solution:
+    """
+    @param numbers : An array of Integer
+    @param target : target = numbers[index1] + numbers[index2]
+    @return : [index1 + 1, index2 + 1] (index1 < index2)
+    """
+    def twoSum(self, numbers, target):
+        length = len(numbers)
+        tempdict = {}
+        for i in xrange(length):
+            tempdict[numbers[i]] = i
+        for j in xrange(length):
+            temp = target- numbers[j]
+            if temp in tempdict.keys():
+                return [j+ 1, tempdict[temp]+ 1]    
