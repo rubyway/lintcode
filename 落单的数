@@ -22,3 +22,12 @@ class Solution:
                 templist.remove(i)
         return templist[0]
         
+ """
+     def singleNumber(self, A):
+        length = len(A)
+        if length == 0:
+            return 0
+        result = A[0]
+        for i in xrange(1, length):
+            result ^= A[i]
+        return result"""
