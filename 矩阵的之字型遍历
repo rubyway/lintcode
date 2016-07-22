@@ -1,0 +1,48 @@
+"""
+
+
+给你一个包含 m x n 个元素的矩阵 (m 行, n 列), 求该矩阵的之字型遍历。
+您在真实的面试中是否遇到过这个题？
+样例
+
+对于如下矩阵：
+
+[
+  [1, 2,  3,  4],
+  [5, 6,  7,  8],
+  [9,10, 11, 12]
+]
+
+返回 [1, 2, 5, 9, 6, 3, 4, 7, 10, 11, 8, 12]
+"""
+class Solution:
+    # @param: a matrix of integers
+    # @return: a list of integers
+    def printZMatrix(self, matrix):
+        row, col = len(matrix), len(matrix[0])
+        result = []
+        if row == 0:
+            return []
+    
+        left, right, up, down = 0, col, 0, row
+        while left<= right and up<= down:
+            
+            for _ in xrange(left, right):
+                result.append(matrix[up][_])
+                
+            for _ in xrange(up+ 1, down):
+                result.append(matrix[_][right- 1])
+                
+            for _ in xrange(right- 2, left- 1, -1):
+                if up < down- 1:
+                    result.append(matrix[down- 1][_])
+                    
+            for _ in xrange(down- 2, up, -1):
+                if left < right- 1:
+                    result.append(matrix[_][left])
+                    
+            left += 1
+            right -= 1
+            up += 1
+            down -= 1
+        return result
