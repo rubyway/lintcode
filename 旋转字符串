@@ -35,3 +35,15 @@ class Solution:
     def swap(self, s, a, b):
         for i in xrange(a, (a+b)>>1):
             s[i], s[a+ b- i- 1] = s[a+ b- i- 1], s[i]
+"""          
+    def rotateString(self, s, offset):
+        n = len(s)
+        if n == 0:
+            return s
+        offset %= n
+        temp = s[:n-offset]
+        for i in xrange(n):
+            if i < offset:
+                s[i] = s[n-offset+i]
+            else:
+                s[i] = temp[i-offset]"""
